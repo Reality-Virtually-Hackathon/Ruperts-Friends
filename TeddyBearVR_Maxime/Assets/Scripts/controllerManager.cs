@@ -71,6 +71,8 @@ public class controllerManager : MonoBehaviour {
 		if (triggerButtonUp) {
 			Debug.Log ("Grip Button was just released");
 		}
+
+		teddyAnim.SetFloat ("distance", controller.transform.pos.magnitude);
 	}
 
 
