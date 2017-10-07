@@ -61,7 +61,8 @@ MonoBehaviour:
     m_lastTimePsrt1: -94539264
     m_lastTimePart2: -1999303290
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /TeddyBearVR_Maxime_WwiseProject
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 0
