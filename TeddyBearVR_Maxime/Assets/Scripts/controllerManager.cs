@@ -6,8 +6,8 @@ public class controllerManager : MonoBehaviour {
 
 	private Valve.VR.EVRButtonId gripButton = Valve.VR.EVRButtonId.k_EButton_Grip;
 
-
-
+	public GameObject teddyController, playerController, headset;
+	public float safeDistance;
 	public bool gripButtonUp = false;
 	public bool gripButtonDown = false;
 	public bool gripButtonPressed = false; 
@@ -43,11 +43,7 @@ public class controllerManager : MonoBehaviour {
 		} else {
 			teddyAnim.SetBool ("isAngry", false);
 		}
-
-
-
-
-
+			
 		gripButtonDown = controller.GetPressDown (gripButton);
 		gripButtonUp = controller.GetPressUp (gripButton);
 		gripButtonPressed = controller.GetPressDown (gripButton);
@@ -72,12 +68,13 @@ public class controllerManager : MonoBehaviour {
 			Debug.Log ("Grip Button was just released");
 		}
 
-		teddyAnim.SetFloat ("distance", controller.transform.pos.magnitude);
+		teddyAnim.SetFloat ("distance", (teddyController.transform.position - headset.transform.position).magnitude);
+
+
 	}
 
 
 	void OnTriggerEnter(Collider obj){
-
 
 		if (triggerButtonDown) {			// interact with the object only if trigger is held down and the teddy is in it's proximity
 			teddyAnim.SetTrigger ("interact");
