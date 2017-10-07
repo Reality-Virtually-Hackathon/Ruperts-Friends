@@ -6,6 +6,8 @@ public class controllerManager : MonoBehaviour {
 
 	private Valve.VR.EVRButtonId gripButton = Valve.VR.EVRButtonId.k_EButton_Grip;
 
+
+
 	public bool gripButtonUp = false;
 	public bool gripButtonDown = false;
 	public bool gripButtonPressed = false; 
@@ -15,6 +17,10 @@ public class controllerManager : MonoBehaviour {
 	public bool triggerButtonUp = false;
 	public bool triggerButtonDown = false;
 	public bool triggerButtonPressed = false; 
+
+
+	public float threshVelocity;
+	public Animator teddyAnim;
 
 	private SteamVR_TrackedObject trackedObj;
 	private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input ((int)trackedObj.index); } } 
@@ -32,6 +38,16 @@ public class controllerManager : MonoBehaviour {
 			return;
 		}
 
+		if (controller.velocity.magnitude > threshVelocity) {		//isAngry
+			teddyAnim.SetBool ("isAngry", true);
+		} else {
+			teddyAnim.SetBool ("isAngry", false);
+		}
+
+
+
+
+
 		gripButtonDown = controller.GetPressDown (gripButton);
 		gripButtonUp = controller.GetPressUp (gripButton);
 		gripButtonPressed = controller.GetPressDown (gripButton);
@@ -47,7 +63,9 @@ public class controllerManager : MonoBehaviour {
 		if (gripButtonUp) {
 			Debug.Log ("Grip Button was just released");
 		}
-		if (triggerButtonDown) {
+		if (triggerButtonDown) {		// interact
+
+			//teddyAnim.SetTrigger ("interact");
 			Debug.Log ("Grip Button was just pressed");
 		}
 		if (triggerButtonUp) {
@@ -56,7 +74,13 @@ public class controllerManager : MonoBehaviour {
 	}
 
 
+	void OnTriggerEnter(Collider obj){
 
+
+		if (triggerButtonDown) {			// interact with the object only if trigger is held down and the teddy is in it's proximity
+			teddyAnim.SetTrigger ("interact");
+		}
+	}
 
 
 }
