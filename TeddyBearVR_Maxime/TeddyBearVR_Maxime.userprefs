@@ -1,9 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ragdollTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ragdollToMecanim_Transitions\RagdollHelper.cs">
     <Files>
-      <File FileName="Assets\WwiseSettings.xml" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ragdollTest.cs" Line="23" Column="37" />
+      <File FileName="Assets\Scripts\ragdollTest.cs" Line="1" Column="1" />
+      <File FileName="..\..\RagdollTest\Assets\Scripts\RagdollHelper.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ragdollToMecanim_Transitions\StairDismount.cs" Line="34" Column="4" />
+      <File FileName="Assets\Scripts\ragdollToMecanim_Transitions\RagdollPartScript.cs" Line="36" Column="7" />
+      <File FileName="Assets\Scripts\ragdollToMecanim_Transitions\RagdollHelper.cs" Line="158" Column="70" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
